@@ -17,7 +17,7 @@ function App() {
         
         {/* Feed */}
 
-        
+        <Post /> 
         
         {/* Post */} 
     
