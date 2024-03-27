@@ -4,11 +4,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import React from 'react';
 import Post from './components/Post';
+import CreatePostForm from './components/CreatePostForm';
 
 
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const [posts, setPosts] = useState([]);
+
+  const handleCreatePost = (newPost) => {
+    setPosts([...posts, newPost]);
+  };
 
   return (
     
@@ -16,6 +23,13 @@ function App() {
       <h1>Fakebook!</h1>
       
         {/* CreatePostForm */}
+
+        <CreatePostForm onCreatePost={handleCreatePost} />
+      <hr />
+      {posts.map((post, index) => (
+        <Post key={index} title={post.title} content={post.content} />
+      ))
+      }
         
         {/* Feed */}
 

@@ -12,6 +12,8 @@ function Post(props){
     return(
       <div>
         <h3>{props.content}</h3>
+        
+
         <p>Likes: {likes}</p>
 
         <button onClick={handleLike}>Like</button>
@@ -23,6 +25,7 @@ function Post(props){
         <Comment content="This is yet another test comment!" />
         
       </div>
+      
     )
   }
   export default Post
