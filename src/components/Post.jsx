@@ -1,7 +1,7 @@
 import Comment from './Comment';
 import React, { useState } from 'react';
 
-function Post(props){
+function Post({post}){
 
     const [likes, setLikes] = useState(0);
 
@@ -10,8 +10,9 @@ function Post(props){
       }
 
     return(
-      <div>
-        <h3>{props.content}</h3>
+      <div className="post">
+        <h3>{post.title}</h3>
+        <p>{post.content}</p>
         
 
         <p>Likes: {likes}</p>

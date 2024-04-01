@@ -5,6 +5,7 @@ import './App.css'
 import React from 'react';
 import Post from './components/Post';
 import CreatePostForm from './components/CreatePostForm';
+import Feed from './components/Feed';
 
 
 
@@ -19,22 +20,19 @@ function App() {
 
   return (
     
-    <div>
+    <div className="App">
       <h1>Fakebook!</h1>
       
         {/* CreatePostForm */}
 
         <CreatePostForm onCreatePost={handleCreatePost} />
-      <hr />
-      {posts.map((post, index) => (
-        <Post key={index} title={post.title} content={post.content} />
-      ))
-      }
-        
+
+      <br />
+
         {/* Feed */}
 
-        <Post content="This is a test post!" />
-        <Post content="This is another test post!" />
+        <Feed posts={posts} /> 
+      
         
         {/* Post */} 
     
